@@ -1,8 +1,10 @@
-import { reset, seed } from 'drizzle-seed'
-import { db, sql } from '../connection.ts'
-import { schema } from '../schema/index.ts'
+import { reset, seed } from 'drizzle-seed';
+import { schema } from '../schema/index.ts';
+import { db, sql } from '../connection.ts';
 
-await reset(db, schema)
+const generateMockVector = () => new Array(768).fill(0);
+
+await reset(db, schema);
 
 await seed(db, schema).refine((f) => {
   return {
@@ -12,10 +14,18 @@ await seed(db, schema).refine((f) => {
         name: f.companyName(),
         description: f.loremIpsum(),
       },
-    }
-  }
-})
+    },
+    questions: {
+      count: 20,
+      columns: {
+        content: f.loremIpsum(), 
+        embedding: generateMockVector(),
+      },
+    },
+  };
+});
 
-await sql.end()
+await sql.end();
 
-console.log('Database seeded')
+// biome-ignore lint/suspicious/noConsole: only used in dev
+console.log('Database seeded');
