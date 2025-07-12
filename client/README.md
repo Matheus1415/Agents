@@ -1,66 +1,86 @@
-# NLW Agents
+## 📂 Sobre o Projeto
 
-Projeto desenvolvido durante um evento da Rocketseat para demonstrar o uso de agentes inteligentes na web.
+O **NLW Agents** é uma aplicação desenvolvida durante o evento **Next Level Week** promovido pela **Rocketseat**, com o objetivo de explorar o uso de agentes inteligentes na web. Este projeto demonstra a construção de uma aplicação moderna e acessível utilizando as tecnologias mais recentes do ecossistema React.
 
-## 🚀 Tecnologias
+---
 
-- **React 19.1** - Biblioteca para interfaces de usuário
-- **TypeScript 5.8** - Superset JavaScript com tipagem estática
-- **Vite 7.0** - Build tool e servidor de desenvolvimento
-- **TailwindCSS 4.1** - Framework CSS utility-first
-- **React Router Dom 7.6** - Biblioteca de roteamento
-- **TanStack React Query 5.8** - Gerenciamento de estado servidor e cache
-- **Radix UI** - Componentes primitivos acessíveis
-- **Shadcn/ui** - Sistema de componentes
-- **Lucide React** - Biblioteca de ícones
+## 🚀 Funcionalidades
 
-## 📂 Padrões de Projeto
+- Interface moderna e acessível com **Radix UI** e **Shadcn/UI**
+- Integração com agentes inteligentes via **API**
+- Gerenciamento de estado servidor com **React Query**
+- Roteamento baseado em arquivos
+- Estilo com **Tailwind CSS** e suporte a componentes com variantes
 
-- **Component-based Architecture** - Arquitetura baseada em componentes React
-- **File-based Routing** - Roteamento baseado em arquivos com React Router
-- **Server State Management** - Gerenciamento de estado servidor com React Query
-- **Variant-based Components** - Componentes com variantes usando CVA
-- **Composition Pattern** - Padrão de composição com Radix Slot
-- **Path Aliasing** - Alias de caminhos (`@/` aponta para `src/`)
+---
 
-## ⚙️ Configuração do Projeto
+## ⚙️ Como Instalar
 
-### Pré-requisitos
+Para rodar o **NLW Agents** localmente, siga os passos abaixo:
 
-- Node.js (versão 18 ou superior)
-- npm ou yarn
+1. **Clone o repositório:**
 
-### Instalação
+   ```bash
+   git clone https://github.com/Matheus1415/Agents
+   ```
+   
+2. **Acesse o diretório do projeto:**
 
-1. Clone o repositório
-2. Instale as dependências:
+   ```bash
+   cd Agents
+   ```
+
+3. **Instale as dependências:**
+
    ```bash
    npm install
    ```
 
-3. Execute o servidor de desenvolvimento:
-   ```bash
-   npm run dev
-   ```
+4. **Acesse a aplicação no navegador:**
 
-4. Acesse a aplicação em `http://localhost:5173`
+   [http://localhost:5173](http://localhost:5173)
 
-### Scripts Disponíveis
+> ⚠️ **Importante**: O projeto consome uma API que deve estar rodando na porta `3333`.  
+> Certifique-se de que o backend esteja configurado e ativo antes de iniciar o frontend.
 
-- `npm run dev` - Inicia o servidor de desenvolvimento
-- `npm run build` - Gera build de produção
-- `npm run preview` - Preview do build de produção
+## 📜 Scripts Disponíveis
 
-### Backend
+- `npm run dev` — Inicia o servidor de desenvolvimento
+- `npm run build` — Gera a build de produção
+- `npm run preview` — Faz o preview da build de produção
 
-O projeto consome uma API que deve estar rodando na porta 3333. Certifique-se de que o backend esteja configurado e executando antes de iniciar o frontend.
+---
 
-## 🛠️ Estrutura do Projeto
+## 🛠️ Tecnologias Utilizadas
 
+- **React 19.1** – Biblioteca para interfaces de usuário  
+- **TypeScript 5.8** – Superset do JavaScript com tipagem estática  
+- **Vite 7.0** – Ferramenta de build rápida e moderna  
+- **Tailwind CSS 4.1** – Framework CSS utilitário  
+- **React Router Dom 7.6** – Biblioteca de roteamento  
+- **TanStack React Query 5.8** – Gerenciamento de estado do servidor  
+- **Radix UI** – Componentes de interface acessíveis  
+- **Shadcn/UI** – Sistema de componentes moderno  
+- **Lucide React** – Biblioteca de ícones SVG open source
+
+---
+
+## 📁 Estrutura do Projeto
+
+```bash
+client/
+├── src/
+│   ├── app.tsx                     # Componente raiz da aplicação
+│   ├── lib/                        
+│   │   └── dayjs.ts                # Configuração da biblioteca Day.js
+│   ├── pages/
+│   │   └── create-room.tsx        # Página para criação de uma nova sala
+│   ├── components/
+│   │   ├── question-form.tsx      # Componente de formulário para perguntas
+│   │   └── ui/
+│   │       └── badge.tsx          # Componente visual de badge
+│   ├── http/
+│   │   ├── use-create-question.ts          # Hook para criação de perguntas via API
+│   │   └── types/
+│   │       └── create-question-request.ts  # Tipagem da requisição de criação de pergunta
 ```
-src/
-├── components/ui/    # Componentes de interface
-├── pages/           # Páginas da aplicação
-├── lib/             # Utilitários e configurações
-└── app.tsx          # Componente raiz
-``` 
