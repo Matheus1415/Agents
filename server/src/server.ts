@@ -20,7 +20,7 @@ dotenv.config();
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
 app.register(fastifyCors, {
-  origin: "http://localhost:5174",
+  origin: "http://localhost:5173",
 });
 
 app.register(fastifyMultipart);
